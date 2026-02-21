@@ -3,19 +3,19 @@ import { OrbitingImages } from './OrbitingImages';
 import { useContinuousRotation } from '../hooks/useContinuousRotation';
 import styles from '../styles/orbital.module.css';
 
-const PLACEHOLDER = '/assets/images/placeholder.svg';
-const MAIN_IMAGE = '/assets/images/main-woman.png';
+const PLACEHOLDER = 'assets/images/placeholder.svg';
+const MAIN_IMAGE = 'assets/images/main-woman.png';
 const ORBIT_IMAGES = [
-  '/assets/images/orbit-1.png',
-  '/assets/images/orbit-2.png',
-  '/assets/images/orbit-3.png',
-  '/assets/images/orbit-4.png',
-  '/assets/images/orbit-5.png',
-  '/assets/images/orbit-6.png',
-  '/assets/images/orbit-7.png',
-  '/assets/images/orbit-8.png',
-  '/assets/images/orbit-9.png',
-  '/assets/images/orbit-10.png',
+  'assets/images/orbit-1.png',
+  'assets/images/orbit-2.png',
+  'assets/images/orbit-3.png',
+  'assets/images/orbit-4.png',
+  'assets/images/orbit-5.png',
+  'assets/images/orbit-6.png',
+  'assets/images/orbit-7.png',
+  'assets/images/orbit-8.png',
+  'assets/images/orbit-9.png',
+  'assets/images/orbit-10.png',
 ];
 
 function getRadius(): number {
