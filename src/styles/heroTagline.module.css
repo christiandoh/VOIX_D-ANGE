@@ -1,0 +1,81 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 2rem 1.5rem 1rem;
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+  padding-top: max(2rem, env(safe-area-inset-top));
+  text-align: center;
+  pointer-events: none;
+}
+
+.tagline {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(0.9rem, 2.5vw + 0.75rem, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.65;
+  margin: 0;
+  max-width: min(28ch, 100%);
+  margin-inline: auto;
+  padding-inline: 0.5rem;
+  color: #fff;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.highlight {
+  display: inline-block;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  word-break: break-word;
+  background: linear-gradient(
+    165deg,
+    #ffb366 0%,
+    #ff9533 25%,
+    #e87d2b 50%,
+    #d66b1f 75%,
+    #c45a14 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(255, 220, 180, 0.5))
+          drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))
+          drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25))
+          drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 1.5rem 1rem 0.75rem;
+  }
+  .tagline {
+    letter-spacing: 0.04em;
+  }
+  .highlight {
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 1.25rem 0.75rem 0.5rem;
+  }
+  .tagline {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 1rem 0.5rem 0.5rem;
+  }
+}

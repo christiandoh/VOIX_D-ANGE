@@ -1,0 +1,116 @@
+/* Scène fixe 100vh, responsive (dvh pour mobile) */
+.outer {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: radial-gradient(
+    circle at center,
+    #c8f7dc 0%,
+    #a8efd0 40%,
+    #7de2b8 100%
+  );
+}
+
+/* Sticky 100vh, perspective adaptée au viewport */
+.stickyStage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  perspective: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* Spec: camera wrapper preserve-3d, will-change transform */
+.cameraWrapper {
+  transform-style: preserve-3d;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centre : image principale */
+.centerImage {
+  position: relative;
+  z-index: 2;
+  width: clamp(180px, 35vw, 320px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Conteneur des images en orbite — inclinaison type anneau de Saturne */
+.orbitContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transform: rotateX(-28deg);
+}
+
+/* Item d'orbite : transform 3D dynamique, uniquement transform/opacity */
+.orbitItem {
+  position: absolute;
+  width: clamp(80px, 14vw, 140px);
+  height: clamp(80px, 14vw, 140px);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.orbitItemImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive: radius géré en JS */
+@media (max-width: 380px) {
+  .centerImage {
+    width: clamp(120px, 50vw, 180px);
+  }
+  .orbitItem {
+    width: clamp(48px, 22vw, 80px);
+    height: clamp(48px, 22vw, 80px);
+  }
+  .orbitItemImg {
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 381px) and (max-width: 768px) {
+  .stickyStage {
+    perspective: 1000px;
+  }
+  .centerImage {
+    width: clamp(140px, 42vw, 220px);
+  }
+  .orbitItem {
+    width: clamp(56px, 18vw, 100px);
+    height: clamp(56px, 18vw, 100px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .stickyStage {
+    perspective: 1200px;
+  }
+  .centerImage {
+    width: clamp(160px, 38vw, 260px);
+  }
+  .orbitItem {
+    width: clamp(70px, 15vw, 120px);
+    height: clamp(70px, 15vw, 120px);
+  }
+}

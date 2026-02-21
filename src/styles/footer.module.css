@@ -1,0 +1,93 @@
+.footer {
+  background: linear-gradient(180deg, #5fc997 0%, #2d6a4f 100%);
+  color: #fff;
+  padding: 2rem 1.5rem;
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  text-align: center;
+}
+
+.credit {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.credit strong {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.whatsappLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  min-height: 44px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsappLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsappLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.whatsappIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.tagline {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  .credit {
+    font-size: 0.9rem;
+  }
+  .whatsappLink {
+    padding: 0.6rem 1rem;
+  }
+  .whatsappLink span {
+    font-size: 0.9rem;
+  }
+  .tagline {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 1.25rem 0.75rem;
+  }
+  .credit {
+    font-size: 0.85rem;
+  }
+}
